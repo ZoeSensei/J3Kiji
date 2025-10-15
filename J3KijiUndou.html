@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>NHK Easy Article</title>
+<style>
+/* ====== BASIC LAYOUT ====== */
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #222;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 14px;
+    background-color: #fff;
+}
+
+/* ====== CONTROL BUTTONS ====== */
+#nhk-controls {
+    margin: 15px 0 25px 0;
+    text-align: center;
+}
+.nhk-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 24px;
+    background-color: #9f75d1; /* lavender */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.425em; /* ~24px */
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.nhk-btn:hover {
+    background-color: #805ab0; /* slightly darker lavender on hover */
+}
+
+/* ====== FURIGANA TOGGLE ====== */
+#nhk-article.hide-furigana rt {
+    display: none;
+}
+
+/* ====== DICTIONARY POPUPS (hover) ====== */
+.dicWin {
+    cursor: help;
+    text-decoration: underline dotted;
+    position: relative;
+}
+.dicWin:hover::after {
+    content: attr(data-def);
+    position: absolute;
+    top: 1.6em;
+    left: 0;
+    white-space: normal;
+    background-color: #ffffe0;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 0.9em;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 9999;
+    width: max-content;
+    max-width: 320px;
+}
+
+/* small helpers */
+img { max-width: 100%; height: auto; display: block; margin: 8px auto; }
+.under { text-decoration: underline; }
+
+/* ====== COLOR LEGEND ====== */
+.article-main__colors {
+    margin-top: 20px;
+}
+.about-word-color__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 8px 0;
+}
+.word-color-list__item {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 6px;
+}
+.word-color-list__item span {
+    vertical-align: middle;
+}
+.about-word-color__caution {
+    color:#666;
+    font-size:0.95em;
+    margin-top:8px;
+}
+
+.color-legend-box {
+    background-color: #F5F5DC; /* light beige */
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 6px;
+}
+    
+/* ====== PAGE BANNER ====== */
+#page-banner {
+    background-color: #0078d7; /* blue */
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 15px 0;
+    margin: 0 0 20px 0;
+    border-radius: 4px;
+}
+
+/*==== Details line spacing ==== */
+details p {
+  margin: 0.5em 0;   /* smaller vertical margin */
+  line-height: 1.4;  /* normal line spacing */
+}
+    
+</style>
+</head>
+<body>
+
+<!-- ====== PAGE BANNER ====== -->
+<div id="page-banner">
+    NEWS WEB EASY やさしい日本語
+</div>
+
+<!-- ====== CONTROL BUTTON ====== -->
+<div id="nhk-controls">
+    <button class="nhk-btn" id="toggle-furigana">
+        <ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>消<rt>け</rt></ruby>す
+    </button>
+</div>
+
+<!-- ====== ARTICLE CONTENT ====== -->
+<div id="nhk-article">
+
+<h3 style="font-size: 20px; margin-bottom: 6px;">
+     「<ruby>運動<rt>うんどう</rt></ruby>する<ruby>若<rt>わか</rt></ruby>い<ruby>女性<rt>じょせい</rt></ruby>が<ruby>少<rt>すく</rt></ruby>なくなっているようです」
+</h3>
+
+<p style="text-align: center;">
+    <img src="https://github.com/ZoeSensei/J3Kiji/blob/main/J3KijiUndouPic.jpg?raw=true" alt="走って運転している女性">
+</p>
+
+<p style="color: #555; margin-bottom: 20px;">[2025年10月14日 19時22分]</p>
+
+<p>13<ruby>日<rt>にち</rt>はスポーツの日でした。</p>
+
+<p><ruby>国<rt>くに</rt></ruby>は<ruby>毎年<rt>まいとし</rt></ruby>、6<ruby>歳<rt>さい</rt></ruby>から7<ruby>歳<rt>さい</rt></rubyまでの<ruby>人<rt>ひと</rt></ruby>の<ruby>運動<rt>うんどう</rt></ruby>する<ruby>能力<rt>のうりょく</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べて、<ruby>発表<rt>はっぴょう</rt></ruby>しています。<ruby>体<rt>からだ</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かすテストをしたり<ruby>運動<rt>うんどう</rt></ruby>する<ruby>習慣<rt>しゅうかん</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べたりしました。<</p>
+
+<p>45<ruby>歳<rt>さい</rt></ruby>から49<ruby>歳<rt>さい</rt></ruby>の<ruby>女性<rt>じょせい</rt></ruby>のテストの<ruby>結果<rt>けっか</rt></ruby>は、<ruby>今<rt>いま</rt></ruby>まででいちばん<ruby>低<rt>ひく</rt></ruby>くなりました。35<ruby>歳<rt>さい</rt></ruby>から39<ruby>歳<rt>さい</rt></ruby>の<ruby>女性<rt>じょせい</rt></ruby>の<ruby>結果<rt>けっか</rt></ruby>は、<ruby>今<rt>いま</rt></ruby>までで2<ruby>番目<rt>ばんめ</rt></ruby>に<ruby>低<rt>ひく</rt></ruby>くなりました。</p>
+
+<p<ruby>専門家<rt>せんもんか</rt></ruby>は「<ruby>最近<rt>さいきん</rt></ruby>、<ruby>運動<rt>うんどう</rt></ruby>する<ruby>若<rt>わか</rt></ruby>い<ruby>女性<rt>じょせい</rt></ruby>が<ruby>前<rt>まえ</rt></ruby>より<ruby>少<rt>すく</rt></ruby>なくなっているようです。<ruby>仕事<rt>しごと</rt></ruby>や<ruby>子<rt>こ</rt></ruby>どもを<ruby>育<rt>そだ</rt></ruby>てることに<ruby>忙<rt>いそが</rt></ruby>しいためかもしれません」と<ruby>話<rt>はな</rt></ruby>しています。</p>
+
+
+
+<!-- Audio player -->
+<p style="text-align: center; margin: 20px 0;">
+    <audio controls>
+        <source src="https://zoesensei.github.io/J3Kiji/J3KijiUndouListen.m4a" type="audio/mpeg">
+    </audio>
+</p>
+    
+<!-- Color legend -->
+<div class="color-legend-box">
+    <ul class="about-word-color__list word-color-list">
+        <li class="word-color-list__item is-person">
+            <span style="color: #03893d;"><strong>[みどり]</strong></span>
+            ...<ruby>人<rt>ひと</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+        <li class="word-color-list__item is-place">
+            <span style="color: #cf4a00;"><strong>[オレンジ]</strong></span>
+            …<ruby>国<rt>くに</rt></ruby>や<ruby>県<rt>けん</rt></ruby>、<ruby>町<rt>まち</rt></ruby>、<ruby>場所<rt>ばしょ</rt></ruby>などの<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+        <li class="word-color-list__item is-group">
+            <span style="color: #0e68b3;"><strong>[あお]</strong></span>
+            …<ruby>会社<rt>かいしゃ</rt></ruby>やグループなどの<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+    </ul>
+</div>
+ 
+<p class="about-word-color__caution">※<span class="dicWin" data-def="下線のあることばをホバーすると意味が表示されます。">下に線があることば</span>は<ruby>辞書<rt>じしょ</rt></ruby>の説明を<ruby>見<rt>み</rt></ruby>ることができます。<ruby>押<rt>お</rt></ruby>すと、<ruby>辞書<rt>じしょ</rt></ruby>の説明を<ruby>見<rt>み</rt></ruby>ることができます。</p>
+
+<details id="normal-news">
+  <summary style="display:none;"></summary>
+  <h3 style="font-size: 20px; margin-bottom: 6px;">「体力・運動能力調査」 30代・40代女性の結果 大きく低下</h3>
+  <p style="color: #555; margin-bottom: 20px;">2025年10月12日 5時00分</p>
+
+    <p>子どもからお年寄りまでの体力や運動能力を調べるスポーツ庁の調査の昨年度の結果が公表され、30代と40代の女性の合計点がここ10年で大きく低下していることが分かりました。また中学から大学までに、運動部で活動などをしていた人がその後も運動を続ける傾向が高いことも明らかになり、国は子育て世代や大学生を重点にスポーツが気軽にできる環境作りを進めていく方針です。</p>
+
+<p>全国の6歳から79歳までを対象にスポーツ庁が毎年行っている「体力・運動能力調査」は、握力や上体起こしなど6から8項目の体力テストのほか運動習慣なども調べていて、昨年度は5万9000人余りが対象となりました。</p>
+
+<p>その結果が12日に公表され、体力テストの各項目を数値化して合計した「体力合計点」では、<br/>
+▽40代後半の女子は32.23で、10年前より2ポイント下がり、これまでで最も低くなったほか<br/>
+▽30代後半の女子も35.08で、10年前より0.93ポイント下がり、過去2番目に低くなりました。</p>
+
+<p>これについて調査結果を分析した順天堂大学大学院の内藤久士教授は「若い女性の運動の実施率がここ何年か下がっている傾向にある。共働きや育児などの社会的な情勢もあり運動をやりたい人はいるが、運動をする生活習慣を身につけている人が少なくなっている」と話していました。</p>
+
+<p>また20代から30代で中学から大学までに部活動やクラブで運動経験があった人のうち、現在も週1回以上の運動をしている人の割合は50.5％だったのに対し、運動経験がなかった人は33％にとどまることも分かりました。</p>
+
+<p>スポーツ庁は「生徒や学生の時代に運動経験があるかどうかが、社会人になってからの習慣につながる」としていて、子育て世代や大学生などを重点にスポーツが気軽にできる環境作りを進めていく方針です。</p>
+</details>
+
+<div style="text-align:center; margin-top: 10px;">
+  <button id="toggle-news" class="nhk-btn">
+    <ruby>普通<rt>ふつう</rt></ruby>のニュースを
+    <ruby>読<rt>よ</rt></ruby>む
+  </button>
+</div>
+    
+</div>
+
+<!-- ====== SCRIPT ====== -->
+<script>
+const btn = document.getElementById('toggle-furigana');
+btn.addEventListener('click', () => {
+    const article = document.getElementById('nhk-article');
+    article.classList.toggle('hide-furigana');
+
+    if(article.classList.contains('hide-furigana')){
+        btn.innerHTML = '<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>付<rt>つ</rt></ruby>ける';
+    } else {
+        btn.innerHTML = '<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>消<rt>け</rt></ruby>す';
+    }
+});
+</script>
+
+<script>
+// Button toggles the <details>
+const newsBtn = document.getElementById('toggle-news');
+const details = document.getElementById('normal-news');
+
+newsBtn.addEventListener('click', () => {
+    details.open = !details.open;
+});
+</script>
+    
+</body>
+</html>
