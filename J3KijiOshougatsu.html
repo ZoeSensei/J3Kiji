@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>NHK Easy Article</title>
+<style>
+/* ====== BASIC LAYOUT ====== */
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #222;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 14px;
+    background-color: #fff;
+}
+
+/* ====== CONTROL BUTTONS ====== */
+#nhk-controls {
+    margin: 15px 0 25px 0;
+    text-align: center;
+}
+.nhk-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 24px;
+    background-color: #9f75d1; /* lavender */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.425em; /* ~24px */
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.nhk-btn:hover {
+    background-color: #805ab0; /* slightly darker lavender on hover */
+}
+
+/* ====== FURIGANA TOGGLE ====== */
+#nhk-article.hide-furigana rt {
+    display: none;
+}
+
+/* ====== DICTIONARY POPUPS (hover) ====== */
+.dicWin {
+    cursor: help;
+    text-decoration: underline dotted;
+    position: relative;
+}
+.dicWin:hover::after {
+    content: attr(data-def);
+    position: absolute;
+    top: 1.6em;
+    left: 0;
+    white-space: normal;
+    background-color: #ffffe0;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 0.9em;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 9999;
+    width: max-content;
+    max-width: 320px;
+}
+
+/* small helpers */
+img { max-width: 100%; height: auto; display: block; margin: 8px auto; }
+.under { text-decoration: underline; }
+
+/* ====== COLOR LEGEND ====== */
+.article-main__colors {
+    margin-top: 20px;
+}
+.about-word-color__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 8px 0;
+}
+.word-color-list__item {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 6px;
+}
+.word-color-list__item span {
+    vertical-align: middle;
+}
+.about-word-color__caution {
+    color:#666;
+    font-size:0.95em;
+    margin-top:8px;
+}
+
+.color-legend-box {
+    background-color: #F5F5DC; /* light beige */
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 6px;
+}
+    
+/* ====== PAGE BANNER ====== */
+#page-banner {
+    background-color: #0078d7; /* blue */
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 15px 0;
+    margin: 0 0 20px 0;
+    border-radius: 4px;
+}
+
+/*==== Details line spacing ==== */
+details p {
+  margin: 0.5em 0;   /* smaller vertical margin */
+  line-height: 1.4;  /* normal line spacing */
+}
+    
+</style>
+</head>
+<body>
+
+<!-- ====== PAGE BANNER ====== -->
+<div id="page-banner">
+    NEWS WEB EASY やさしい日本語
+</div>
+
+<!-- ====== CONTROL BUTTON ====== -->
+<div id="nhk-controls">
+    <button class="nhk-btn" id="toggle-furigana">
+        <ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>消<rt>け</rt></ruby>す
+    </button>
+</div>
+
+<!-- ====== ARTICLE CONTENT ====== -->
+<div id="nhk-article">
+
+<h3 style="font-size: 20px; margin-bottom: 6px;">
+  <ruby>長崎県<rt>ながさきけん</rt></ruby>　<ruby>正月<rt>しょうがつ</rt></ruby>の<ruby>飾<rt>かざ</rt></ruby>りを<ruby>燃<rt>も</rt></ruby>やす「<ruby>鬼火<rt>おにび</rt></ruby>たき」があった
+</h3>
+
+<p style="text-align: center;">
+    <img src="https://github.com/ZoeSensei/J3Kiji/blob/main/J3KijiOshougatsuPic.jpg?raw=true" alt="焚火を見ている人">
+</p>
+
+<p style="color: #555; margin-bottom: 20px;">[2026年1月8日 19時32分]</p>
+
+  <p><ruby>正月<rt>しょうがつ</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>で<ruby>飾<rt>かざ</rt></ruby>った<ruby>飾<rt>かざ</rt></ruby>りを<span class="dicWin" data-def="火をつけること"><ruby>燃<rt>も</rt></ruby>やす</span><ruby>行事<rt>ぎょうじ</rt></ruby>がありました。</p>
+
+  <p>「<ruby>鬼火<rt>おにび</rt></ruby>たき」というこの<ruby>行事<rt>ぎょうじ</rt></ruby>は、<strong style="color: #cf4a00;"><ruby>長崎県五島市<rt>ながさきけんごとうし</rt></ruby></strong>で、<ruby>毎年<rt>まいとし</rt></ruby>1<ruby>月<rt>がつ</rt></ruby><ruby>7日<rt>なのか</rt></ruby>に<ruby>行<rt>おこな</rt></ruby>っています。</p>
+
+  <p><span class="dicWin" data-def="早く生える植物の一つ。高くてほそいけど、強い"><ruby>竹<rt>たけ</rt></ruby></span>で<ruby>作<rt>つく</rt></ruby>った<ruby>高<rt>たか</rt></ruby>さ10mぐらいの「やぐら」に、<ruby>正月<rt>しょうがつ</rt></ruby>の<ruby>飾<rt>かざ</rt></ruby>りを<ruby>入<rt>い</rt></ruby>れました。そして、<ruby>火<rt>ひ</rt></ruby>をつけて<ruby>燃<rt>も</rt></ruby>やしました。</p>
+
+  <p><ruby>残<rt>のこ</rt></ruby>った<ruby>火<rt>ひ</rt></ruby>で<ruby>餅<rt>もち</rt></ruby>を<ruby>焼<rt>や</rt></ruby>いて<ruby>食<rt>た</rt></ruby>べると、1<ruby>年<rt>ねん</rt></ruby><ruby>間<rt>かん</rt></ruby><ruby>病気<rt>びょうき</rt></ruby>をしないで<ruby>過<rt>す</rt></ruby>ごすことができると<ruby>言<rt>い</rt></ruby>われています。</p>
+
+  <p><span class="dicWin" data-def="活動に入って一緒にすること"><ruby>参加<rt>さんか</rt></ruby></span>した<ruby>人<rt>ひと</rt></ruby>は「<ruby>今年<rt>ことし</rt></ruby>1<ruby>年<rt>ねん</rt></ruby>、<ruby>健康<rt>けんこう</rt></ruby>で<ruby>楽<rt>たの</rt></ruby>しく<ruby>生活<rt>せいかつ</rt></ruby>したいです」と<ruby>話<rt>はな</rt></ruby>していました。</p>
+
+
+<!-- Audio player -->
+<p style="text-align: center; margin: 20px 0;">
+    <audio controls>
+        <source src="https://zoesensei.github.io/J3Kiji/J3KijiOshougatsuListen.m4a" type="audio/mpeg">
+    </audio>
+</p>
+    
+<!-- Color legend -->
+<div class="color-legend-box">
+    <ul class="about-word-color__list word-color-list">
+        <li class="word-color-list__item is-person">
+            <span style="color: #03893d;"><strong>[みどり]</strong></span>
+            ...<ruby>人<rt>ひと</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+        <li class="word-color-list__item is-place">
+            <span style="color: #cf4a00;"><strong>[オレンジ]</strong></span>
+            …<ruby>国<rt>くに</rt></ruby>や<ruby>県<rt>けん</rt></ruby>、<ruby>町<rt>まち</rt></ruby>、<ruby>場所<rt>ばしょ</rt></ruby>などの<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+        <li class="word-color-list__item is-group">
+            <span style="color: #0e68b3;"><strong>[あお]</strong></span>
+            …<ruby>会社<rt>かいしゃ</rt></ruby>やグループなどの<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+    </ul>
+</div>
+ 
+<p class="about-word-color__caution">※<span class="dicWin" data-def="下線のあることばをホバーすると意味が表示されます。">下に線があることば</span>は<ruby>辞書<rt>じしょ</rt></ruby>の説明を<ruby>見<rt>み</rt></ruby>ることができます。<ruby>押<rt>お</rt></ruby>すと、<ruby>辞書<rt>じしょ</rt></ruby>の説明を<ruby>見<rt>み</rt></ruby>ることができます。</p>
+
+<details id="normal-news">
+  <summary style="display:none;"></summary>
+  <h3>すみません、今度は大人向けの記事がないんです。</h3>
+  <p style="color: #555; margin-bottom: 20px;">2026年1月8日 19時32分</p>
+
+<p>ありません。</p>
+</details>
+
+<div style="text-align:center; margin-top: 10px;">
+  <button id="toggle-news" class="nhk-btn">
+    <ruby>普通<rt>ふつう</rt></ruby>のニュースを
+    <ruby>読<rt>よ</rt></ruby>む
+  </button>
+</div>
+    
+</div>
+
+<!-- ====== SCRIPT ====== -->
+<script>
+const btn = document.getElementById('toggle-furigana');
+btn.addEventListener('click', () => {
+    const article = document.getElementById('nhk-article');
+    article.classList.toggle('hide-furigana');
+
+    if(article.classList.contains('hide-furigana')){
+        btn.innerHTML = '<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>付<rt>つ</rt></ruby>ける';
+    } else {
+        btn.innerHTML = '<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>消<rt>け</rt></ruby>す';
+    }
+});
+</script>
+
+<script>
+// Button toggles the <details>
+const newsBtn = document.getElementById('toggle-news');
+const details = document.getElementById('normal-news');
+
+newsBtn.addEventListener('click', () => {
+    details.open = !details.open;
+});
+</script>
+    
+</body>
+</html>
